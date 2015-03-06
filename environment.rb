@@ -6,6 +6,7 @@ require 'active_record'
 
 require 'bundler/setup'
 require 'rubygems'
+require 'bcrypt'
 
 require 'uri'
 require 'pathname'
@@ -19,7 +20,7 @@ APP_NAME = APP_ROOT.basename.to_s
 configure do
   set :root, APP_ROOT.to_path
   set :views, File.join(APP_ROOT, "app", "views")
-  enable :session
+  enable :sessions
 end
 
 # Set up the controllers and helpers
