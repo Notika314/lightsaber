@@ -1,6 +1,10 @@
 get '/' do
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+  end
   erb :index
 end
+
 get '/users/show' do
    <<-HTML
 <h1>title</h1>

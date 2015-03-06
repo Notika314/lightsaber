@@ -1,3 +1,10 @@
-<p>Welcome to my LightSaber.  Prepare to be amazed.</p>
-<a href="/users/new">Create account</a><br>
-<a href="/users/show">Main page</a>
+<div class="container">
+  <p>Welcome to my LightSaber.  Prepare to be amazed.</p>
+    <% if @user %>
+      <a href="/users/logout"><%= "Sign out" %></a><br>
+    <% else %>
+      <a href="/users/new"><%= "Create account" %></a><br>
+      <a href="/users/login"><%= "Sign in" %></a><br>
+    <% end %>
+    <a href="/users/show">Main page</a>
+</div>
